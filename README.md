@@ -6,7 +6,7 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -22,4 +22,9 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-#### [gitssh](git@github.com:cmsxiu/shop-admin.git)
+### 制作流程
+
+- 制作首页 APP 组件
+  - 完成 header，使用 mint-ui 中的 header
+
+  - 完成底部，使用 mint-ui 中的 header

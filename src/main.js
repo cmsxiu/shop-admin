@@ -4,16 +4,19 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-// 导入 ElementUI
+// 寮曞叆 ElementUI
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI)
 
-// 导入 MintUI
+// 寮曞叆 MintUI
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
 
+// 寮曞叆 VueResource
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
 
 Vue.config.productionTip = false
 
