@@ -35,7 +35,7 @@
                                    size="small">立即购买</mt-button>
                         <mt-button type="danger"
                                    size="small"
-                                   @click="box=!box">加入购物车</mt-button>
+                                   @click="addToCar">加入购物车</mt-button>
                     </p>
                 </div>
             </div>
@@ -83,7 +83,7 @@ export default {
             const url = "getgoodslist.php"
             this.$http.get(url + "?pageindex=" + this.pageindex).then(res => {
                 this.productLunbotu = res.body
-                this.productInfo = this.productLunbotu[this.$route.params.id]
+                this.productInfo = this.productLunbotu[this.id]
             })
         },
         goodsdesc (id) {
@@ -126,6 +126,17 @@ export default {
             // 获取子传的数据
             this.num = num
             console.log(this.num)
+        },
+        addToCar () {
+            this.box = !this.box
+            var goodsinfo = {
+                id: this.id,
+                num: this.num,
+                price: this.productInfo.new_price,
+                selected: true
+            }
+
+            this.$store.commit("addToCar", goodsinfo)
         }
     },
     components: {

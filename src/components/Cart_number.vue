@@ -6,30 +6,33 @@
         <input id="test"
                class="mui-input-numbox"
                type="number"
-               value="1"
+               :value="goodsNumber"
                @change="numChange"
+               readonly
                ref="num" />
         <button class="mui-btn mui-btn-numbox-plus"
                 type="button">+</button>
     </div>
 </template>
 <script>
-import mui from '../../lib/mui/js/mui.js'
+import mui from '../lib/mui/js/mui.js'
 export default {
     mounted () {
         mui(".mui-numbox").numbox()
+        // console.log("最多可以购买：" + this.max + "件")
     },
     methods: {
         numChange () {
-            this.$emit('getnumber', parseInt(this.$refs.num.value));
+            // 数量改变了
+            // console.log(this.$refs.num.value)
+            // 每当数值改变，就将最新的数值传输到
+            this.$store.commit("updateGoodsInfo", {
+                id: this.goodsid,
+                num: this.$refs.num.value
+            })
         },
     },
-    props: ["max"],
-    watch: {
-        max: (newVal, oldVal) => {
-            mui(".mui-numbox").numbox().setOption('max', newVal)
-        }
-    },
+    props: ["goodsNumber", "goodsid"],
 }
 </script>
 <style lang="scss" scoped>

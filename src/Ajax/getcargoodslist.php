@@ -4,7 +4,7 @@
 	header("Access-Control-Allow-Headers:x-requested-with,content-type");
 	header("Content-type:text/json;charset=utf-8");
 	
-	$pageindex = $_GET['pageindex'];
+	$gid = $_GET["gid"];
 	
 	$arr = [];
 	$arr[0] = [
@@ -106,8 +106,7 @@
 		"new_price" => 888,
 		"stock_quantity" => 200
 	];
-	$arr = array_slice($arr, 0, (5 * $pageindex));
-    $newslist = json_encode($arr);
-	echo $newslist;
-
+	foreach ($gid as $key => $value) {
+		echo json_encode($arr[$value]);
+	}
 ?>
