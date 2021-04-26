@@ -19,7 +19,7 @@ Vue.use(MintUI)
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
 // 全局配置接口地址
-Vue.http.options.root = 'http://it.cmsxiu.com'
+Vue.http.options.root = 'http://18t.net'
 // 全局配置 psot 时候表单数据格式组织形式
 Vue.http.options.emulateJSON = true
 

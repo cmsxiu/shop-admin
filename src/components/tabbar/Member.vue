@@ -1,15 +1,11 @@
 <template>
   <div>
-      <h3>这个是会员</h3>
+    <h3>这个是会员</h3>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
-<style>
-
-</style>
+<style></style>
